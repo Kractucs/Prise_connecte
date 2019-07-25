@@ -1,0 +1,8 @@
+L'application est censé fonctionner mais nous avons pas de tel android pour tester.
+
+L'AVD (android virtuel) ne peut pas faire de MQTT.
+
+
+
+
+... que des iPhones ...

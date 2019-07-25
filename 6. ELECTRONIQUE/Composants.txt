@@ -1,0 +1,4 @@
+Transfo 220V -> 5V	=	myrra 48022
+ESP 8266		=	ESP8266 DEVKITC 02DF Espressif
+RELAI 5v bobine -> 200v	=	G2RL-1A-E 5DC
+TRANSISTOR 3,3V -> 5V	=	IRFZ44NPBF	

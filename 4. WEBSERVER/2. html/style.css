@@ -1,0 +1,487 @@
+
+/* --------- CSS DU BODY ET DU HEADER QUI EST COMMUN A TOUTE LES PAGES --------- */
+
+body{ /*  défini les parametres de toute les pages */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    height: 100%;
+}
+header {
+    background-color: #3f4245;
+    color: white;
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+}
+img{ /* défini une taille fixe pour les images, ce qui permet d'avoir une unité du site  */
+    width: 270px;
+    height: 421px;
+    display: inline-block;
+}
+#nom_library{
+    display: inline-block;
+    width: 40%;   
+    text-align: center;
+}
+#nom_library i{ color: #f9be03;} /* Change la couleur de l'icone sur le titre  */
+
+.navbar { /* défini les propriété de la barre de navigation  */
+    width: 59%;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+}
+.navbar li {
+    display: inline-block;
+    padding: 10px 10px;
+}
+.navbar li a {
+    text-decoration: none;
+    color: white;
+}
+.navbar li:hover{ /*  Defini les propriété des menus quand on passe la souris dessus */
+    transition: all 0.5s ease;
+    color: #f9be03;
+    background-color: #27292a;
+}
+#active{ color: red;} /*  défini la couleur de l'onglet en cours */
+
+.titres{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: red;
+    text-align: left;
+    font-size: 2em;
+    border-bottom: 2px dotted #b3b3b3;
+    padding-bottom: 1%;
+    margin-top: 0px;
+    padding-top: 26px;
+}
+
+
+/* ----- PAGE INDEX HTML ----- */
+
+
+/* section slider livres favoris */
+
+
+#liste_fav{
+    width:80%;
+    height: 560px;
+    margin-right: 10%;
+    margin-left: 10%;
+    overflow: hidden; /* Cache les slides qui dépassent  */
+    position: relative;
+}
+#fav_1, #fav_2, #fav_3{ /*  défini les propriétés des slides des livres favories */
+    position: absolute;
+    height: 421px;
+    width:100%;
+
+}
+#fav_1 img, #fav_2 img, #fav_3 img{ /* defini les images dans les slides des livres favoris */
+    width: 19%;
+    height: 421px;
+}
+.fav_content{
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.fav_content h2 a {
+    color: red;
+    font-size: 3em;
+}
+.fav_content .resume {
+    width: 80%;
+    margin: auto 10%;
+    font-size: 1em;
+    
+}
+.fav_content .auteur ,.fav_content .stars{ /* défini la taille des étoiles  */
+    font-size: 2em;
+}
+#fav_1{left: 0%;}/*  pose le 1er slide a 0% a gauche */
+#fav_2{left: 100%;}/* pose le slide a 100% a gauche afin qu'il soit cacher par les 100% de la première */
+#fav_3{left: 200%;}/* pose la slide a 200% apres la 2eme slide  */
+#contener_slide{
+    width:100%;
+    left:0%;
+    position: absolute;
+    animation-duration: 15s; /* Durée de l'animation  */
+    animation-iteration-count: infinite; /* Nombre de fois que l'animation démare, infitite permet de jamais l'areter */
+    animation-name: animation_fav; /* nom de l'animation  */
+    height: 421px;
+}
+@keyframes animation_fav{ /* au fur et a mesure de l'animation, le conteneur se déplace pour afficher les prochaines slides  */
+    0% {left:0%;}
+    22% {left:0%;}
+    33% {left:-100%;}
+    45% {left:-100%;}
+    66% {left:-200%;}
+    90% {left:-200%;}
+}
+
+
+/* SECTION nouveaux livres de la page index */
+
+
+#Nouveaux_livres_section { /* défini les bases de la section avec les 9nouveaux livres  */
+    position: relative;
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+    width: 80%;
+    background-color: #f2f3f4
+}
+.Nouveaux_livres_article { /* défini les propriété de chaques livres */
+    margin: 15px 15px 15px 15px;
+    display: inline-grid;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.Nouveaux_livres_article img{ /* défini les propriété des images des livres */
+    width: 270px;
+    height: 421px;
+    transition: all 0.2s ease;
+}
+.Nouveaux_livres_article img:hover {              /* fait apparaitre un shadow en dessous de l'image du livre quand on passe dessus */
+    filter: drop-shadow(20px 20px 20px black);
+}
+.Nouveaux_livres_article p{ /* défini les propriété du texte en dessous des images des livres */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+.Nouveaux_livres_article p a{ /* défini les propriété du titre du livre qui est sous forme de lien */
+    font-size: 1.2em;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;    
+}
+.stars{ /* défini les propriété des étoiles pour les avis */
+    display: inline-block;
+    font-size: 1.2em;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;    
+}
+.resume{ /* défini les propriété du lorem ipsum de la description du livre */
+    font-style: italic;
+    font-size: 0.8em;
+    width: 270px;
+    font-family: "Montserrat", sans-serif;
+}
+#liens_formulaies{ /* défini les propriété de la section avec les liens vers les formulaires */
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-color: #eaeced;
+}
+.emprunt, .ajout { /* défini les blocs avecc le text et le bouton vers les formulaires */
+    font-family: "Open-sans", sans-serif;
+    display: inline-block;
+    background: white;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 40px 5% 100px 5%;
+    width: 35%;
+}
+.ico{ /* défini les propriété des icones */
+    color: red;
+    background-color: white;
+    border-radius: 100%;
+    font-size: 3em;
+    margin-top: -15%;/* permet de mettre l'icone un peux plus haut que dans le bloc avec le texte */
+}
+.bouton_containter{ /* permet de positionner le bouton */
+    margin-left: $10%;
+    margin-top: 10%;
+    
+}
+.bouton {  /* Défini les propriété des boutons */
+    padding: 15px 50px;
+    font-size: 1.1em;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background-color: red;
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+.bouton:hover { /* Défini les propriété quand on passe sur un bouton */
+    background-color: #f9be03;
+}
+.bouton i { /* Défini les propriété de la fleche sur les boutons / Icones */
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+.bouton:hover i { /* Défini comment doit réagir l'icone quand on passe sur le bouton */
+    transform: rotate(-90deg) scale(2);
+    transition: all 0.5s ease;
+}
+
+.main{ /* défini les propriété de base de la section principale, celle qui est présente sur toute les pages sauf l'index */
+    position: relative;
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+    width: 80%;
+}
+.categorie{ /* défini les propriété de chaque catégorie de la page */
+    text-align: left;
+    padding: 25px 0px;
+    margin: 20px 0px;
+    border-bottom: 1px solid #3f4245;
+}
+.categorie img { /* défini les propriété de l'image des catégories */
+    width: 22%;
+    filter: drop-shadow(5px 5px 10px black);
+    object-fit:cover;
+}
+.liste_categorie_content{ /* défini les propriété du texte des catégories */
+    display: inline-block;
+    width: 74%;
+    vertical-align: top;
+    margin-left: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+.liste_categorie_texte h3{ /* titre de la catégorie */
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+.liste_categorie_bouton{ /* Bouton Explorer la catégorie */
+    float: right;
+    display: block;
+}
+.liste_categorie_bouton .bouton_containter, #submit .bouton{ /* Propriété de tout les boutons qui doivent auguementer*/
+    margin-right: 25px;
+    margin-top: 75px;
+    transition: all 0.5s ease;
+}
+.liste_categorie_bouton .bouton_containter:hover, #submit .bouton:hover { /* grossis le bouton quand on passes dessus */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#cat{
+    color: black;
+}
+
+
+#tableau_livre{ /* Propriété du tableau qui contient la liste des livres*/
+    font-family: "Open Sans", sans-serif;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+#tableau_livre th{ /* défini les propriété du header du tableau */
+    font-size: 1.3em;
+    color: red;
+    padding: 9px;
+    margin-bottom: 9px;
+    border-bottom: 2px solid #f9be03;
+}
+#tableau_livre .fa-caret-up{ /* Propriété des fleches */
+    padding-right: 2px;
+    padding-left: 10px;
+}
+#tableau_livre th:first-of-type .fa-caret-up:first-of-type{ /* Change la couleur de la première fleche de la premiere ligne du tableau */
+    color: red;
+}
+#tableau_livre .fa-caret-up,.fa-caret-down{ /* Met les autres fleches en noir */
+    color: black;
+}
+#tableau_livre .fa-caret-up:hover,.fa-caret-down:hover{ /* Change la couleur des fleches quand on passes dessus */
+    color: red;
+    cursor: pointer;
+}
+#tableau_livre td{ /* met une ligne en border a la fin de chaque ligne du tableau */
+    border-bottom: 1px solid grey;
+    margin: 4px;
+    font-size: 1em;
+}
+#tableau_livre tr:hover{ /* fait que le hover ne fonctionne pas sur la premiere ligne mais sur toute les autres*/
+    background-color: #ededed;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+#tableau_livre td:first-of-type{ /* défini la taille de la première colone */
+    width: 8%;
+}
+#tableau_livre 	td:nth-child(2){ /* Met le texte de la 2eme colone en gras, ce qui correspond au titre du livre */
+    font-weight: bold;
+}
+#tableau_livre input{
+    text-align: center;
+}
+
+
+#pages{ /* Défini les propriété pour les fausses pages en bas */
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+    padding: 30px 0px;
+}
+#pages a { /* défini les propriété des liens, numéro de pages, dans la liste */
+    position: relative;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+
+}
+
+#pages #page { /* Défini les propriété de la page en cours */
+    background-color: #f9be03;
+    color: white;
+    border-radius: 10px;
+}
+
+#pages a:hover { /* Défini la propriété quand on passe sur une page */
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.fomrmulaire { /* défini les propriété pour les formulaires */
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    border: none;
+    border-left: 3px solid red;
+    padding-left: 20px;
+}
+.fomrmulaire p{ /* Met les élémentes de texte en format block */
+    display: block;
+}
+.fomrmulaire label { /* Met les labels, les desctiption des champs, en inline block pour les avoirs avant les champs, on defini un width pour aligner les champs */
+    display: inline-block;
+    padding: 10px 0px;
+    color: #b7800a;
+    font-weight: bold;
+    width: 200px;
+}
+.fomrmulaire input:focus, textarea:focus, select:focus { /* Change la bordure quand on est entrain d'écrire dans le champ */
+    border: 3px solid red;
+    transition: all 0.3s ease;
+}
+.fomrmulaire select, input, textarea{ /* défini les inputs du formulaires en inline block et leur met un width pour que tout les formulaires on la meme taille */
+    width: 300px;
+    display: inline-block;
+}
+#desc{ /* Fait en sorte que le label description soit en haut de la zone de texte et pas en bas */
+    vertical-align: top;
+}
+#help_code{ /* défini les propriété de l'aide sur les formulaires */
+    margin-left: 20px;
+    color: grey;
+    display: inline;
+}
+#submit{ /* défini les propriété du bouton pour envoyer le formulaire */
+    text-align: center;
+    display: block;
+    padding: 50px 0px;
+    margin: 0px;
+}
+#submit .bouton { /* Défini les propriété du bouton qui envoi le formulaire en enlevant les bordure et les margin */
+    border: none;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+#titre_livre{ /* Centre le titre du livre dans la page exemple livre */
+    text-align: center;
+}
+#livre{ /* Défini les propriété de la section exemple de livre */
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    vertical-align: middle;
+}
+#livre #right{ /* Défini les propriété a droite de la barre */
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+#livre #right .stars{ /* défini la taille des étoiles */
+    font-size: 2.5em;
+}
+#livre #right img{ /* défini la taille de l'image */
+    width: 100%;
+}
+#livre_content{ /* Défini les propriété du contenu du texte des livres */
+    margin-left:50px;
+    border-left: 3px solid red;
+    padding-left: 20px;
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+}
+#livre .quest{ /* défini les proprété des "titre" du livre par ex "Auteur :" */
+    display: inline-block;
+    width: 15%;
+    text-decoration: underline;
+}
+#livre .rep{ /* Défini les propriété de la reponses par ex "Lorem" */
+    display: inline-block;
+    width: 84%;
+}
+#livre_content .resume{ /* Défini les propriété de l'avis et du resumé */
+    width: 80%;
+    border: 1px solid gray;
+    padding: 5px;
+}
+#bouton_livre .bouton_containter{ /* Défini les propriété du deuxiemme bouton et le met a droite */
+    float: right;
+    margin-bottom: 100px;
+}
+#bouton_livre .bouton_containter:first-of-type{/* met le 1er bouton a gauche */
+    float: left;
+}
+#retour i { /* Défini les propriété de l'icone qui est sur le bouton retour car la fleche est dans l'autre sens */
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+#retour:hover i { /* Défini les propriété de quand on passes sur le bouton, comment la fleche doit réagir */
+    transform: rotate(90deg) scale(2);
+    transition: all 0.5s ease;
+}
+
+/* Footer COMMUN A TOUTE LES PAGES */
+
+footer{ /* Propriété du footer */
+    padding-top: 50px;
+    background-color: #3f4245;
+    height: 150px;
+    text-align: center;
+    width: 100%;
+}
+
+#coeur{ /* Coeur dans le footer */
+    color: red;
+    padding: 0px 5px;
+}
+
+footer p{ /* propriété du texte dans le footer */
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+#social a{ /* Liens dans le footer, quand on clique sur les icones */
+    font-size: 2em;
+    color: red;
+    text-decoration: none;
+    padding: 0px 5px;
+}
+#social i { /* Propriété du i */
+    transition: all 0.3s ease;
+}
+#social i:hover{ /* Change la taille quand on passe sur le bouton */
+    transform: scale(1.2);
+    color: black;
+}
